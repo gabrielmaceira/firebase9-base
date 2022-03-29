@@ -4,10 +4,9 @@ import { NavLink, Link } from 'react-router-dom';
 
 export const NavBar = () => {
   const categories = [
-    { id: 'asfadd', address: '/', text: 'TODOS LOS PRODUCTOS' },
-    { id: '123asf', address: '/category/A', text: 'CATEGORIA A' },
-    { id: 'sgs3q3', address: '/category/B', text: 'CATEGORIA B' },
-    { id: 'gkl98s', address: '/category/C', text: 'CATEGORIA C' },
+    { id: 'asfadd', address: '/', text: 'TODOS LOS PERSONAJES' },
+    { id: '123asf', address: '/category/ranged', text: 'A distancia' },
+    { id: 'sgs3q3', address: '/category/closecombat', text: 'Cuerpo a cuerpo' },
   ];
 
   return (
@@ -15,7 +14,7 @@ export const NavBar = () => {
       {categories.map((cat) => {
         return (
           <div className="links" key={cat.id}>
-            <NavLink to={cat.address} exact activeClassName="activeClass">
+            <NavLink to={cat.address} className={({isActive}) => isActive ? "activeClass" : ""}>
               {cat.text}
             </NavLink>
             {/* POR SI USAN BOOTSTRAP */}
